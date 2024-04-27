@@ -41,22 +41,20 @@ class HomeViewModel(private val mongoDB: MongoDB) : ScreenModel {
         }
     }
 
-    fun setAction(action: TaskAction) {
-        when (action) {
-            is TaskAction.Delete -> {
-                deleteTask(action.task)
-            }
-
-            is TaskAction.SetCompleted -> {
-                setCompleted(action.task, action.completed)
-            }
-
-            is TaskAction.SetFavorite -> {
-                setFavorite(action.task, action.isFavorite)
-            }
-
-            else -> {}
+    fun setAction(action: TaskAction) = when (action) {
+        is TaskAction.Delete -> {
+            deleteTask(action.task)
         }
+
+        is TaskAction.SetCompleted -> {
+            setCompleted(action.task, action.completed)
+        }
+
+        is TaskAction.SetFavorite -> {
+            setFavorite(action.task, action.isFavorite)
+        }
+
+        else -> {}
     }
 
     private fun setCompleted(task: ToDoTask, completed: Boolean) {
