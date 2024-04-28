@@ -12,7 +12,7 @@ import org.jetbrains.compose.ui.tooling.preview.Preview
 import presentation.screen.home.HomeScreen
 
 val lightRedColor = Color(color = 0xFFF57D88)
-val darkRedColor = Color(color = 0xFF77000B)
+val darkRedColor = Color(color = 0xFF1D2B53)
 
 @Composable
 @Preview
